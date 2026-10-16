@@ -1,0 +1,424 @@
+:root {
+    --bg: #e6ede6;
+    --ink: #10302a;
+    --soft: #4d6b63;
+    --red: #d8402f;
+    --glass: #fbfdfb;
+    --line: #c3d1c8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.4 system-ui, sans-serif;
+    min-height: 100vh;
+}
+
+/* ---------- Layout ---------- */
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 2;
+}
+
+header h1 {
+    flex: 1;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    margin-right: 40px;
+}
+
+main {
+    max-width: 520px;
+    margin: auto;
+    padding: 8px 18px 120px;
+}
+
+h2 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--soft);
+    margin: 26px 0 4px;
+}
+
+/* ---------- Buttons and inputs ---------- */
+
+button {
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    background: var(--ink);
+    color: #fff;
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+button.ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--line);
+}
+
+button.danger {
+    background: var(--red);
+}
+
+button.icon {
+    width: 40px;
+    padding: 4px 10px;
+    background: transparent;
+    color: var(--ink);
+    font-size: 1.5rem;
+}
+
+button.big {
+    display: block;
+    width: 100%;
+    margin: 10px 0 8px;
+    padding: 16px;
+    font-size: 1.1rem;
+}
+
+button.finish {
+    background: var(--red);
+    margin: 0 0 14px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 2px;
+}
+
+input,
+textarea {
+    width: 100%;
+    font: inherit;
+    padding: 13px;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+}
+
+/* ---------- Home list ---------- */
+
+.item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-height: 120px;
+    border-bottom: 1.5px solid var(--line);
+    transition: opacity 0.3s, max-height 0.3s;
+}
+
+.item.gone {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    border-width: 0;
+}
+
+.item a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+.item b {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.item small {
+    color: var(--soft);
+}
+
+.thumb {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.empty {
+    padding: 14px 0;
+    color: var(--soft);
+}
+
+.pop {
+    position: absolute;
+    right: 8px;
+    top: 80%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    min-width: 140px;
+    background: var(--glass);
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px #10302a30;
+    overflow: hidden;
+}
+
+.pop button {
+    background: transparent;
+    color: var(--ink);
+    text-align: left;
+    border-radius: 0;
+    padding: 13px 16px;
+}
+
+.pop button.danger {
+    color: var(--red);
+}
+
+.pop button + button {
+    border-top: 1px solid var(--line);
+}
+
+/* ---------- Project screen ---------- */
+
+.proj {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    gap: 8px;
+    align-items: start;
+}
+
+.stat {
+    margin-bottom: 18px;
+}
+
+.stat small {
+    display: block;
+    color: var(--soft);
+}
+
+.stat span {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.plan {
+    margin-top: 8px;
+    padding-left: 10px;
+    border-left: 4px solid var(--red);
+    font-size: 0.95rem;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.fill {
+    transition: transform 0.9s cubic-bezier(0.3, 1.3, 0.5, 1);
+}
+
+.acts {
+    display: flex;
+    justify-content: space-between;
+    margin: 18px 0 26px;
+}
+
+.acts button {
+    width: 46%;
+    font-size: 1.05rem;
+}
+
+.acts .sub {
+    background: transparent;
+    color: var(--red);
+    border: 2px solid var(--red);
+}
+
+.acts .add {
+    background: var(--red);
+}
+
+.tx {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.92rem;
+}
+
+.tx small {
+    display: block;
+    color: var(--soft);
+}
+
+.tx .out {
+    color: var(--red);
+}
+
+/* ---------- Completed project ---------- */
+
+.photo {
+    display: block;
+    width: 100%;
+    max-height: 60vh;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.notes {
+    margin-bottom: 8px;
+    white-space: pre-wrap;
+}
+
+/* ---------- Drawer ---------- */
+
+#drawer {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 78%;
+    max-width: 300px;
+    padding: 18px;
+    background: var(--ink);
+    color: #fff;
+    transform: translateX(-105%);
+    transition: transform 0.25s;
+}
+
+#drawer.open {
+    transform: none;
+}
+
+#drawer a {
+    padding: 12px 0;
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+#drawer .icon {
+    align-self: flex-end;
+    color: #fff;
+}
+
+#scrim {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 4;
+    background: #0006;
+}
+
+#scrim.open {
+    display: block;
+}
+
+/* ---------- Bottom sheet ---------- */
+
+.ov {
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    display: flex;
+    align-items: flex-end;
+    background: #0007;
+}
+
+.sheet {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    padding: 20px;
+    background: var(--glass);
+    border-radius: 18px 18px 0 0;
+}
+
+.sheet label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--soft);
+}
+
+.row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* ---------- Settings ---------- */
+
+.set {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 8px;
+}
+
+.set label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--soft);
+}
+
+/* ---------- Celebration ---------- */
+
+.boom {
+    animation: boom 0.9s ease-in forwards;
+}
+
+@keyframes boom {
+    0%        { transform: translateX(0); }
+    10%, 30%, 50% { transform: translateX(-7px) rotate(-2deg); }
+    20%, 40%  { transform: translateX(7px) rotate(2deg); }
+    65%       { transform: scale(1); opacity: 1; }
+    100%      { transform: scale(1.8); opacity: 0; }
+}
+
+#fx {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
