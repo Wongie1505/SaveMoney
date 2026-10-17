@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.wongie1505.savemoney",
+        "sha256_cert_fingerprints": ["A5:49:43:A0:D0:17:FE:4E:E5:21:31:5B:E2:DE:0D:B3:60:3F:C0:89:1C:9F:A0:91:FB:9B:E3:E4:4E:D8:65:37"]
+      }
+    }]
