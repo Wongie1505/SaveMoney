@@ -416,6 +416,69 @@ svg {
     pointer-events: none;
 }
 
+/* ---------- Responsive ---------- */
+
+body {
+    min-height: 100dvh;
+}
+
+.stat span {
+    font-size: clamp(1.4rem, 5.5vw, 2.2rem);
+}
+
+@media (max-width: 360px) {
+    .proj {
+        grid-template-columns: 1fr 120px;
+    }
+
+    .acts button {
+        padding: 12px 8px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 700px) {
+    header {
+        padding-inline: max(16px, calc((100% - 720px) / 2 + 18px));
+    }
+
+    main {
+        max-width: 720px;
+    }
+
+    .proj {
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+    }
+
+    .photo {
+        max-height: 55vh;
+    }
+
+    .ov {
+        align-items: center;
+    }
+
+    .sheet {
+        max-width: 460px;
+        border-radius: 18px;
+    }
+}
+
+@media (min-width: 1100px) {
+    header {
+        padding-inline: max(16px, calc((100% - 880px) / 2 + 18px));
+    }
+
+    main {
+        max-width: 880px;
+    }
+
+    .proj {
+        grid-template-columns: 1fr 340px;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     * {
         transition: none !important;

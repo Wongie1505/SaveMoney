@@ -1,4 +1,4 @@
-const V = 'gid-v2';
+const V = 'gid-v3';
 const FILES = [
     './', 'index.html', 'manifest.json', 'icon-192.png', 'icon-512.png',
     'css/style.css', 'js/app.js', 'js/jspdf.umd.min.js'
