@@ -1,7 +1,7 @@
 const V = 'gid-v2';
 const FILES = [
     './', 'index.html', 'manifest.json', 'icon-192.png', 'icon-512.png',
-    'index.css', 'app.js', 'jspdf.umd.min.js'
+    'css/style.css', 'js/app.js', 'js/jspdf.umd.min.js'
 ];
 
 self.addEventListener('install', e => {
